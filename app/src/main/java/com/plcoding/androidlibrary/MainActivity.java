@@ -1,19 +1,12 @@
 package com.plcoding.androidlibrary;
 
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.pub.secure.ZerogatewayApiClient;
+import com.pub.secure.LootPeApiClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ZerogatewayApiClient zerogatewayApiClient = new ZerogatewayApiClient(this);
-        zerogatewayApiClient.initiatePayment("pk_aBcD1234EfGh5326", 100.0, "USD", "sk_xYzAbC1234567890DefGhIjKlMnOpRErS",
-                new ZerogatewayApiClient.PaymentApiCallback() {
+        LootPeApiClient lootPeApiClient = new LootPeApiClient(this);
+        lootPeApiClient.initiatePayment("pk_aBcD1234EfGh5326", 100.0, "USD", "sk_xYzAbC1234567890DefGhIjKlMnOpRErS",
+                new LootPeApiClient.PaymentApiCallback() {
                     @Override
                     public void onSuccess(String transactionId) {
                         Log.d("onSuccess", "onSuccess: "+transactionId);

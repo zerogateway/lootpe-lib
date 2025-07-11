@@ -8,8 +8,6 @@ import android.util.Log;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import com.androidnetworking.AndroidNetworking;
@@ -22,7 +20,7 @@ import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;
 
-public class ZerogatewayApiClient {
+public class LootPeApiClient {
 
     private final String BASE_URL = "https://loot.pe/v1/";
     private WeakReference<Context> contextRef;
@@ -36,7 +34,7 @@ public class ZerogatewayApiClient {
         void onError(String message, int errorCode);
     }
 
-    public ZerogatewayApiClient(Context context) {
+    public LootPeApiClient(Context context) {
         if (!(context instanceof FragmentActivity)) {
             throw new IllegalArgumentException("Context must be a FragmentActivity");
         }
